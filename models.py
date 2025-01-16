@@ -1,6 +1,7 @@
 from math import ceil
     
-### HyperPNN3 IMPLEMENTATION ###
+### HyperPNN: Hyperspectral Pansharpening via Spectrally Predictive Convolutional Neural Networks ###
+### doi: 10.1109/JSTARS.2019.2917584 ###
 class HyperPNN(nn.Module):
     def __init__(self,hs_channels):
         super(HyperPNN, self).__init__()
