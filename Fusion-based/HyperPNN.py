@@ -1,10 +1,11 @@
+### HyperPNN: Hyperspectral Pansharpening via Spectrally Predictive Convolutional Neural Networks ###
+### doi: 10.1109/JSTARS.2019.2917584 ###
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 
-### HyperPNN: Hyperspectral Pansharpening via Spectrally Predictive Convolutional Neural Networks ###
-### doi: 10.1109/JSTARS.2019.2917584 ###
 class HyperPnn(nn.Module):
     def __init__(self,hs_channels):
         super(HyperPNN, self).__init__()
@@ -20,7 +21,7 @@ class HyperPnn(nn.Module):
         self.conv7 = nn.Conv2d(in_channels=self.mid_channels, out_channels=self.HSchannels, kernel_size=1)
         self.Sigmoid = nn.Sigmoid()
 
-    def forward(self, LRHS,PAN):
+    def forward(self, LRHS,PAN): # LRHS-Size = [1,HS_channels,width,height],  PAN-size = [1,1,width,height]
         HRHS = F.interpolate(LRHS, size=[PAN.shape[1],PAN.shape[1]],mode ='bilinear')
         x = F.relu(self.conv1(HRHS))
         x = F.relu(self.conv2(x))
