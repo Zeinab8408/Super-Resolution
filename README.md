@@ -18,4 +18,9 @@ doi: 10.1109/TGRS.2020.2986313
 Hyperspectral Pansharpening via Spectrally Predictive Convolutional Neural Networks, 
 doi: 10.1109/JSTARS.2019.2917584 
 
+### DRPNN : 
+Boosting the Accuracy of Multispectral Image Pansharpening by Learning a Deep Residual Network
+doi : 10.1109/LGRS.2017.2736020 
+
+
 
