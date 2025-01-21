@@ -164,7 +164,6 @@ class Maskautoencoder(nn.Module):
         xe = self.mEncoder(u,LRHS,PAN,loop)
         out = self.umDecoder(xe,LRHS,PAN)
         return out
-autoencoder = Maskautoencoder(hs_channels, PAN_channels) 
 
 class TMAR(nn.Module):
     def __init__(self, hs_channels, PAN_channels):
@@ -187,9 +186,11 @@ class TMAR(nn.Module):
                 x_SE  = SE(x1) + x1
                 u = updateBk(x_SE, LRHS, PAN) 
                 x =  (u + x)/2                    
-            x = autoencoder(u,LRHS,PAN,loop)    
-        x = x  + HRHS   
+            #x = autoencoder(u,LRHS,PAN,loop)    
+        #x = x  + HRHS   
         return x    
+
+autoencoder = Maskautoencoder(hs_channels, PAN_channels) 
 net = TMAR(hs_channels, PAN_channels)
 optimizer = torch.optim.Adam(net.parameters(), lr=5e-4, weight_decay=0)      
 
