@@ -28,7 +28,7 @@ doi: 10.1109/JSTARS.2019.2917584
 
 ### DRPNN : 
 Boosting the Accuracy of Multispectral Image Pansharpening by Learning a Deep Residual Network
-doi : 10.1109/LGRS.2017.2736020 
+doi : 10.1109/LGRS.2017.2736020 . 
 
 
 
